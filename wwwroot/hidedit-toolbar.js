@@ -199,7 +199,7 @@ var examples = {
 var curExample = 0;
 function onLoadClicked()
 {
-    var s = new ReadStream(examples[curExample]);
+    var s = new ReadStream(prompt("Paste a descriptor hex dump below:",examples[curExample]));
 
 	var newDesc = new HIDDescriptor();
 
