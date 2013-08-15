@@ -166,7 +166,7 @@ HIDRun.prototype.runItem = function (item) {
 			break;
 		case HIDItemGlobalTag.LogicalMinimum:
 			this.state.logicalMin = item.data;
-			item.dataDesc = this.state.logicalMin;
+			item.dataDesc = (((this.state.logicalMin & 0x80) >> 7) * -128) + (this.state.logicalMin & 0x7f);
 			break;
 		case HIDItemGlobalTag.LogicalMaximum:
 			this.state.logicalMax = item.data;
